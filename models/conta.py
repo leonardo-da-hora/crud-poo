@@ -1,6 +1,5 @@
 class Conta:
-    def __init__(self, numero, titular, saldo=0):
-        self.numero = numero
+    def __init__(self, titular, saldo=0):
         self.titular = titular
         self.saldo = saldo
 
@@ -10,13 +9,15 @@ class Conta:
     def sacar(self, valor):
         if valor <= self.saldo:
             self.saldo -= valor
-            return True
-        return False
-    
+        else:
+            print("Saldo insuficiente.")
+
     def to_dict(self):
         return {
-            "tipo": "Conta",
-            "numero": self.numero,
+            "tipo": self.__class__.__name__,
             "titular": self.titular,
             "saldo": self.saldo
         }
+    
+    def extrato(self):
+        print(f"{self.titular}: R${self.saldo}")

@@ -8,9 +8,9 @@ def listar(contas):
     print("\n--- LISTA DE CONTAS ---")
     for c in contas:
         print(f"{c.numero} - {c.titular} - Saldo: {c.saldo}")
-    
+
 def criar_conta(contas):
-    tipo = input("Tipo [1] Conta [2] Conta Corrente: ")
+    tipo = input("Tipo [1] Conta | [2] Conta Corrente: ")
 
     numero = input("Número da conta: ")
     titular = input("Titular: ")
